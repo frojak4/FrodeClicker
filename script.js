@@ -1,6 +1,6 @@
 let app = document.querySelector(".app");
 let payout = 0;
-let playerMoney = 0;
+let playerMoney = 1000;
 let totalMoneyEarned = 0;
 let displayMoney = 0;
 let clicksPerSecond = 0;
@@ -197,7 +197,7 @@ function gameUpgrades() {
 
 // oppgraderer oppgraderinger
 function upgradeItem(i) {
-    if (playerMoney > upgrades[index].upgradePrice) {
+    if (playerMoney > upgrades[i].upgradePrice) {
         upgrades[i].audio.play();
         upgrades[i].strength *= 2;
         upgrades[i].fps *= 2;
