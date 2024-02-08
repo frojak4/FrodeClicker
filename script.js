@@ -108,7 +108,7 @@ function game() {
         <h1>Frode Clicker</h1>
     </div>
     <div class="underskrift">
-        <h3 class="mindre-tekst">Beta Versjon 1.0</h3>
+        <h3 class="mindre-tekst">Beta Versjon 0.2</h3>
     </div>
     <div class="stats"> 
     <h1>${displayMoney} Froder</h1>
