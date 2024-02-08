@@ -157,24 +157,27 @@ function game() {
 
 }
 
-function buyUpgrade(index) {
-    if (playerMoney >= upgrades[index].price) {
-        upgrades[index].audio.play()
-        playerMoney -= upgrades[index].price;
-        upgrades[index].amount += 1;
+//Kjøper upgrades
+function buyUpgrade(i) {
+    if (playerMoney >= upgrades[i].price) {
+        upgrades[i].audio.play()
+        playerMoney -= upgrades[i].price;
+        upgrades[i].amount += 1;
 
-        upgrades[index].price = upgrades[index].price / 2 * 2.718;
-        upgrades[index].price = Math.round(upgrades[index].price);
+        upgrades[i].price = upgrades[i].price / 2 * 2.718;
+        upgrades[i].price = Math.round(upgrades[i].price);
     }
 }
 
 
-
+//Gir Froder når du trykker på Frode
  function userClick() {
      totalMoneyEarned += upgrades[4].strength;
      playerMoney += upgrades[4].strength;
  }
 
+
+// Gir betaling for dine upgrades
 function gameUpgrades() {
     for (let i = 0; i < upgrades.length; i++) {
         if (upgrades[i].amount > 0) {
@@ -192,18 +195,20 @@ function gameUpgrades() {
     payout = 0;
 }
 
-function upgradeItem(index) {
+// oppgraderer oppgraderinger
+function upgradeItem(i) {
     if (playerMoney > upgrades[index].upgradePrice) {
-        upgrades[index].audio.play();
-        upgrades[index].strength *= 2;
-        upgrades[index].fps *= 2;
-        playerMoney -= upgrades[index].upgradePrice;
-        upgrades[index].upgradePrice = upgrades[index].upgradePrice * 2.718;
-        upgrades[index].upgradePrice = Math.floor(upgrades[index].upgradePrice);
+        upgrades[i].audio.play();
+        upgrades[i].strength *= 2;
+        upgrades[i].fps *= 2;
+        playerMoney -= upgrades[i].upgradePrice;
+        upgrades[i].upgradePrice = upgrades[i].upgradePrice * 2.718;
+        upgrades[i].upgradePrice = Math.floor(upgrades[i].upgradePrice);
     }
 
 }
 
+//Sjekker etter unlocks
 function checkUnlocks() {
 
     for (let i = 0; i < upgrades.length; i++) {
@@ -223,7 +228,7 @@ function checkUnlocks() {
     
     }
 
-
+//Gjør fargen på ting blå hvis du kan kjøpe
 function checkIfCanBuy(upgradeType, UpgradeCost) {
     if (playerMoney >= UpgradeCost) {
         document.querySelector("." + upgradeType).style.backgroundColor = "blue"
