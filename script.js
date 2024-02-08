@@ -1,6 +1,6 @@
 let app = document.querySelector(".app");
 let payout = 0;
-let playerMoney = 1000;
+let playerMoney = 0;
 let totalMoneyEarned = 0;
 let displayMoney = 0;
 let clicksPerSecond = 0;
